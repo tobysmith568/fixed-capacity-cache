@@ -1,0 +1,23 @@
+{
+  "name": "fixed-capacity-cache",
+  "version": "0.0.1",
+  "description": "fixed-capacity-cache",
+  "main": "dist/index.js",
+  "author": {
+    "name": "Toby Smith",
+    "email": "tobysmith568@hotmail.co.uk",
+    "url": "https://tobysmith.uk"
+  },
+  "license": "ISC",
+  "keywords": [],
+  "scripts": {
+  },
+  "homepage": "https://github.com/tobysmith568/fixed-capacity-cache#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tobysmith568/fixed-capacity-cache.git"
+  },
+  "bugs": {
+    "url": "https://github.com/tobysmith568/fixed-capacity-cache/issues"
+  }
+}
