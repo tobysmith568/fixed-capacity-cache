@@ -5,11 +5,19 @@ export class FixedCapacityCache<TKey, TValue> {
   private readonly cache: Map<TKey, TValue> = new Map();
   private readonly keySet: Set<TKey> = new Set();
 
+  public readonly maxSize: number;
+
   /**
    * A cache which only stores the most recent N items.
    * @param maxSize The maximum number of items to store in the cache.
    */
-  constructor(private readonly maxSize: number) {}
+  constructor(maxSize: number) {
+    if (!maxSize || maxSize < 1) {
+      maxSize = 1;
+    }
+
+    this.maxSize = maxSize;
+  }
 
   /**
    * Gets the value associated with the given key.
@@ -61,6 +69,22 @@ export class FixedCapacityCache<TKey, TValue> {
   public delete(key: TKey): void {
     this.cache.delete(key);
     this.keySet.delete(key);
+  }
+
+  /**
+   * Returns the number of items in the cache.
+   * @returns The number of items in the cache.
+   */
+  public size(): number {
+    return this.keySet.size;
+  }
+
+  /**
+   * Clears the cache.
+   */
+  public clear(): void {
+    this.cache.clear();
+    this.keySet.clear();
   }
 
   private moveKeyToEnd(key: TKey): void {
