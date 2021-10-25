@@ -9,9 +9,9 @@
     "url": "https://tobysmith.uk"
   },
   "license": "ISC",
+  "prettier": "@tobysmith568/prettier-config",
   "keywords": [],
-  "scripts": {
-  },
+  "scripts": {},
   "homepage": "https://github.com/tobysmith568/fixed-capacity-cache#readme",
   "repository": {
     "type": "git",
@@ -19,5 +19,8 @@
   },
   "bugs": {
     "url": "https://github.com/tobysmith568/fixed-capacity-cache/issues"
+  },
+  "devDependencies": {
+    "@tobysmith568/prettier-config": "^1.2.0"
   }
 }
