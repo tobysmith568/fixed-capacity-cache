@@ -11,7 +11,9 @@
   "license": "ISC",
   "prettier": "@tobysmith568/prettier-config",
   "keywords": [],
-  "scripts": {},
+  "scripts": {
+    "build": "tsc"
+  },
   "homepage": "https://github.com/tobysmith568/fixed-capacity-cache#readme",
   "repository": {
     "type": "git",
