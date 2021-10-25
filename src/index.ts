@@ -1,5 +1,5 @@
 /**
- * A cache which only stores the most recent N items.
+ * A cache that only stores the most recent N items.
  */
 export class FixedCapacityCache<TKey, TValue> {
   private readonly cache: Map<TKey, TValue> = new Map();
@@ -8,7 +8,7 @@ export class FixedCapacityCache<TKey, TValue> {
   public readonly maxSize: number;
 
   /**
-   * A cache which only stores the most recent N items.
+   * A cache that only stores the most recent N items.
    * @param maxSize The maximum number of items to store in the cache.
    */
   constructor(maxSize: number) {

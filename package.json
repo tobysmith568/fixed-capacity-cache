@@ -1,7 +1,7 @@
 {
   "name": "fixed-capacity-cache",
-  "version": "0.0.1",
-  "description": "fixed-capacity-cache",
+  "version": "0.0.0",
+  "description": "A tiny, 0-dependency, cache class that stores a fixed number of items.",
   "main": "dist/index.js",
   "author": {
     "name": "Toby Smith",
@@ -10,18 +10,27 @@
   },
   "license": "ISC",
   "prettier": "@tobysmith568/prettier-config",
-  "keywords": [],
-  "scripts": {
-    "build": "tsc",
-    "test": "jest"
-  },
   "homepage": "https://github.com/tobysmith568/fixed-capacity-cache#readme",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/tobysmith568/fixed-capacity-cache.git"
   },
+  "files": [
+    "dist"
+  ],
   "bugs": {
     "url": "https://github.com/tobysmith568/fixed-capacity-cache/issues"
+  },
+  "keywords": [
+    "cache",
+    "fixed",
+    "capacity",
+    "size"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "test": "jest",
+    "test:ci": "jest --ci --coverage"
   },
   "devDependencies": {
     "@tobysmith568/prettier-config": "^1.2.0",
