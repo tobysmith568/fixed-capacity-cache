@@ -1,13 +1,28 @@
+<a href="https://www.npmjs.com/package/fixed-capacity-cache" target="_blank" alt="npm version">
+  <img alt="npm version" src="https://img.shields.io/npm/v/fixed-capacity-cache?logo=npm">
+</a>
+<a href="https://app.fossa.com/projects/custom%2B29651%2Fgithub.com%2Ftobysmith568%2Ffixed-capacity-cache?ref=badge_shield" target="_blank" alt="FOSSA Status">
+  <img alt="FOSSA Status" src="https://app.fossa.com/api/projects/custom%2B29651%2Fgithub.com%2Ftobysmith568%2Ffixed-capacity-cache.svg?type=shield"/>
+</a>
+<a href="https://bundlephobia.com/package/fixed-capacity-cache" target="_blank" alt="npm bundle size">
+  <img alt="npm bundle size" src="https://img.shields.io/bundlephobia/min/fixed-capacity-cache">
+</a>
+<a href="https://app.codecov.io/gh/tobysmith568/fixed-capacity-cache" target="_blank" alt="Codecov">
+  <img alt="Codecov" src="https://img.shields.io/codecov/c/gh/tobysmith568/fixed-capacity-cache">
+</a>
+
 # fixed-capacity-cache
+
 A tiny, 0-dependency, npm library containing a cache class that stores a fixed number of items.
 
-If the cache is configured to only store three items when the fourth item is stored the oldest* item is silently removed.
+If the cache is configured to only store three items when the fourth item is stored the oldest\* item is silently removed.
 
 \*oldest is defined by the item which is either gotten or set least recently.
 
 ## Usage
 
 #### TypeScript
+
 ```ts
 const cacheCapacity = 3;
 
@@ -19,7 +34,9 @@ cache.set(key, value);
 
 const retrievedValue = cache.get(key);
 ```
+
 #### API
+
 ```ts
 class FixedCapacityCache<TKey, TValue> {
   readonly maxSize: number;
@@ -60,24 +77,14 @@ class FixedCapacityCache<TKey, TValue> {
 ```
 
 ## Building the library yourself
+
 ```bash
 npm ci
 npm build
 ```
 
 ## License
-#### ISC
-Copyright (c) 2021 Toby Smith
 
-Permission to use, copy, modify, and/or distribute this software for any
-purpose with or without fee is hereby granted, provided that the above
-copyright notice and this permission notice appear in all copies.
+fixed-capacity-cache is licensed under the [ISC License](./LICENSE.md).
 
-THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES WITH
-REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY
-AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT,
-INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM
-LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR
-OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
-PERFORMANCE OF THIS SOFTWARE.
-
+[![FOSSA Status](https://app.fossa.com/api/projects/custom%2B29651%2Fgithub.com%2Ftobysmith568%2Ffixed-capacity-cache.svg?type=large)](https://app.fossa.com/projects/custom%2B29651%2Fgithub.com%2Ftobysmith568%2Ffixed-capacity-cache?ref=badge_large)

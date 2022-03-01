@@ -1,6 +1,6 @@
 ISC License
 
-Copyright (c) 2021 Toby Smith
+Copyright (c) 2022 Toby Smith
 
 Permission to use, copy, modify, and/or distribute this software for any
 purpose with or without fee is hereby granted, provided that the above
