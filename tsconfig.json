@@ -13,6 +13,5 @@
     "strict": true,
     "skipLibCheck": true
   },
-  "include": ["./src/**/*.ts"],
-  "exclude": ["**/__tests__/**"]
+  "include": ["./src/**/*.ts"]
 }
