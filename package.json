@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "description": "A tiny, 0-dependency, cache class that stores a fixed number of items.",
   "main": "dist/index.js",
+  "types": "dist/main.d.ts",
   "author": {
     "name": "Toby Smith",
     "email": "tobysmith568@hotmail.co.uk",
