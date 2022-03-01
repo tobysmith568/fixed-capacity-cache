@@ -17,8 +17,8 @@ describe("FixedCapacityCache", () => {
     );
 
     [null, undefined].forEach(size =>
-      it(`should set the maxSize to 1 if a falsey is given (${size})`, () => {
-        const cache = new FixedCapacityCache(size as any as number);
+      it(`should set the maxSize to 1 if a falsy is given (${size})`, () => {
+        const cache = new FixedCapacityCache(size as number);
         expect(cache.maxSize).toBe(1);
       })
     );
@@ -83,7 +83,7 @@ describe("FixedCapacityCache", () => {
       cache.set("unwanted1", "unwanted1");
       cache.set("unwanted2", "unwanted2");
 
-      const _ = cache.get(key);
+      cache.get(key);
 
       cache.set("unwanted3", "unwanted3");
       cache.set("unwanted4", "unwanted4");
@@ -156,7 +156,7 @@ describe("FixedCapacityCache", () => {
       cache.set("unwanted1", "unwanted1");
       cache.set("unwanted2", "unwanted2");
 
-      const _ = cache.get(key);
+      cache.get(key);
 
       cache.set("unwanted3", "unwanted3");
       cache.set("unwanted4", "unwanted4");
@@ -200,7 +200,7 @@ describe("FixedCapacityCache", () => {
       expect(result).toBeUndefined();
     });
 
-    it("should silently not fail if a key already does not exist", () => {
+    it("should not error if a key already does not exist", () => {
       const key = "key1";
 
       const cache = new FixedCapacityCache(3);
@@ -279,7 +279,7 @@ describe("FixedCapacityCache", () => {
       expect(sizeAfterClear).toBe(0);
     });
 
-    it("should silently not fail if the cache is already empty", () => {
+    it("should not error if the cache is already empty", () => {
       const cache = new FixedCapacityCache(3);
 
       cache.clear();
