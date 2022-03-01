@@ -18,7 +18,7 @@ describe("FixedCapacityCache", () => {
 
     [null, undefined].forEach(size =>
       it(`should set the maxSize to 1 if a falsy is given (${size})`, () => {
-        const cache = new FixedCapacityCache(size as number);
+        const cache = new FixedCapacityCache(size as unknown as number);
         expect(cache.maxSize).toBe(1);
       })
     );
