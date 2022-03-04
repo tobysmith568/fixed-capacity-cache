@@ -13,13 +13,29 @@ jobs:
         with:
           node-version: 16
           registry-url: https://registry.npmjs.org/
-      - id: get_version
-        uses: battila7/get-version-action@v2
 
-      - run: npm --no-git-tag-version version ${{ steps.get_version.outputs.version-without-v }}
-      - run: npm ci
-      - run: npm run build
-      - run: npm run test:ci
-      - run: npm publish --access public
+      - name: Get version from git tag
+        uses: battila7/get-version-action@v2
+        id: get_version
+
+      - name: Set version in package.json
+        run: npm --no-git-tag-version version ${{ steps.get_version.outputs.version-without-v }}
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build
+        run: npm run build
+
+      - name: Run Tests
+        run: npm run test:ci
+
+      - name: Get publish tag
+        uses: tobysmith568/npm-publish-latest-tag@v1
+        id: latest_tag
+        with:
+          package-json: ./package.json
+
+      - run: npm publish --access public --tag ${{ steps.latest_tag.outputs.latest-tag }}
         env:
           NODE_AUTH_TOKEN: ${{ secrets.npm_token }}
