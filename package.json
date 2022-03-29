@@ -34,7 +34,7 @@
     "test:ci": "jest --ci --coverage"
   },
   "devDependencies": {
-    "@tobysmith568/prettier-config": "^1.2.0",
+    "@tobysmith568/prettier-config": "^2.0.0",
     "@types/jest": "^27.0.2",
     "@typescript-eslint/eslint-plugin": "^5.13.0",
     "@typescript-eslint/parser": "^5.13.0",
