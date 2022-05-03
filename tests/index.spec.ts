@@ -1,4 +1,4 @@
-import { FixedCapacityCache } from "src/index";
+import { FixedCapacityCache } from "../src/index";
 
 describe("FixedCapacityCache", () => {
   describe("constructor", () => {
