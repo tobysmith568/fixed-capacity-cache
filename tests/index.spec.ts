@@ -74,7 +74,7 @@ describe("FixedCapacityCache", () => {
       expect(result).toBeUndefined();
     });
 
-    it("should reset the overwrite presidence of a key/value pair", () => {
+    it("should reset the overwrite precedence of a key/value pair", () => {
       const key = "key1";
       const value = "value1";
 
@@ -147,7 +147,7 @@ describe("FixedCapacityCache", () => {
       })
     );
 
-    it("should reset the overwrite presidence of a key/value pair", () => {
+    it("should reset the overwrite precedence of a key/value pair", () => {
       const key = "key1";
       const value = "value1";
 
