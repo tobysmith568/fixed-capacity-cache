@@ -30,8 +30,7 @@
   ],
   "scripts": {
     "build": "del-cli ./dist && tsc -p tsconfig.build.json",
-    "test": "jest",
-    "test:ci": "jest --ci --coverage"
+    "test": "jest"
   },
   "devDependencies": {
     "@tobysmith568/prettier-config": "^2.0.0",

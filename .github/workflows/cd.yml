@@ -2,19 +2,27 @@ name: CD
 
 on:
   release:
-    types: [created]
+    types:
+      - created
 
 jobs:
-  cd:
-    name: npm Publish
+  ci:
+    name: Run CI
+    uses: ./.github/workflows/ci.yml
+    secrets: inherit
+
+  publish:
+    name: Publish
 
     runs-on: ubuntu-latest
 
     steps:
       - uses: actions/checkout@v3
+
       - uses: actions/setup-node@v3
         with:
-          node-version: 16
+          node-version: 18
+          cache: npm
           registry-url: https://registry.npmjs.org/
 
       - name: Get version from git tag
@@ -27,17 +35,10 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Run EsLint
-        run: npx eslint --max-warnings 0 .
-
-      - name: Run Prettier
-        run: npx prettier --check .
-
-      - name: Build
-        run: npm run build
-
-      - name: Run Tests
-        run: npm run test:ci
+      - name: Download build
+        uses: actions/download-artifact@v3
+        with:
+          name: Build
 
       - name: Get publish tag
         uses: tobysmith568/npm-publish-latest-tag@v1
@@ -45,6 +46,7 @@ jobs:
         with:
           package-json: ./package.json
 
-      - run: npm publish --access public --tag ${{ steps.latest_tag.outputs.latest-tag }}
+      - name: Publish to npm
+        run: npm publish --access public --tag ${{ steps.latest_tag.outputs.latest-tag }}
         env:
           NODE_AUTH_TOKEN: ${{ secrets.npm_token }}
