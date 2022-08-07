@@ -16,6 +16,9 @@ jobs:
 
     runs-on: ubuntu-latest
 
+    needs:
+      - ci
+
     steps:
       - uses: actions/checkout@v3
 
@@ -39,6 +42,7 @@ jobs:
         uses: actions/download-artifact@v3
         with:
           name: Build
+          path: ./dist
 
       - name: Get publish tag
         uses: tobysmith568/npm-publish-latest-tag@v1
