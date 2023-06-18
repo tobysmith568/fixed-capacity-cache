@@ -92,7 +92,7 @@ jobs:
         run: npx jest --ci --coverage
 
       - name: Codecov
-        uses: codecov/codecov-action@v3.1.0
+        uses: codecov/codecov-action@v3.1.4
         if: matrix.os == 'ubuntu-latest' && matrix.node == '18'
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
@@ -115,6 +115,5 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - uses: fossas/fossa-action@v1.3.1
-        with:
-          api-key: ${{ secrets.FOSSA_API_KEY }}
+      - name: Check licences
+        run: npx license-cop
