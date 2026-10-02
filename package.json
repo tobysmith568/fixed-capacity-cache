@@ -41,7 +41,7 @@
     "del-cli": "^7.0.0",
     "eslint": "^8.10.0",
     "jest": "^29.0.0",
-    "license-cop": "^1.0.2",
+    "license-cop": "^2.0.0",
     "ts-jest": "^29.0.0",
     "typescript": "^5.0.0"
   }
