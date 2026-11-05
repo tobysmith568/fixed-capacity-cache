@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-var-requires */
 /** @type {import('ts-jest/dist/types').InitialOptionsTsJest} */
 
 module.exports = {

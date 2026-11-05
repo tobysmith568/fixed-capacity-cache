@@ -70,7 +70,7 @@ export class FixedCapacityCache<TKey, TValue> {
     this.keySet.add(key);
 
     if (this.keySet.size > this.maxSize) {
-      const keyToRemove = this.keySet.values().next().value;
+      const keyToRemove = this.keySet.values().next().value as TKey;
 
       this.cache.delete(keyToRemove);
       this.keySet.delete(keyToRemove);
